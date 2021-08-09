@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import { useRouter } from "next/router";
 import Card from "../components/Card";
 import { format } from "date-fns";
+import Map from "../components/Map";
 function Search({ result }) {
   const router = useRouter();
   const { location, startDate, endDate, nbrGuests } = router.query;
@@ -44,6 +45,9 @@ function Search({ result }) {
               />
             ))}
           </div>
+        </section>
+        <section className="hidden lg:inline-flex lg:min-w-[400px]">
+          <Map result={result} />
         </section>
       </main>
       <Footer />
